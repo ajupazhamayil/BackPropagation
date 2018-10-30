@@ -121,6 +121,11 @@ logging.debug(dataset)
 logging.info("Total length = "+str(len(dataset)))
 logging.info("unique_classes "+str(unique_classes))
 
+#Assign initial weights
+#there are 5 hidden layer nodes and one output node
+#ip_w=np.random.dirichlet(np.ones(no_attr),size=1)[0].tolist()
+#hideen layer weights are stored in matrix form [number of attributes][number of hidden layer nodes=5]
+
 temp_w=np.random.dirichlet(np.ones(no_attr*5),size=1)[0].tolist()#list of weights for ip to hidden layer
 #input to hidden layer weights
 ip_hl_w=[temp_w[i*5:(i+1)*5] for i in range(no_attr)]
